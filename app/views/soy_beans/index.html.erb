@@ -1,5 +1,7 @@
 <% @soy_beans.each do |bean| %>
-  <h1><%= bean.classification %></h1>
-  <p><%="Date: #{bean.date}"%></p>
-  <p><%="Damage severity: #{bean.severity}"%></p>
+  <div class="container">
+    <h1><%= bean.classification %></h1>
+    <p><%="Date: #{bean.date}"%></p>
+    <p><%="Damage severity: #{bean.severity}"%></p>
+  </div>
 <% end %>
