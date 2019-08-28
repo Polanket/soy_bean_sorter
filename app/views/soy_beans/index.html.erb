@@ -28,9 +28,13 @@
 </div>
 
 <div class="container">
-  <% @soy_beans.each do |bean| %>
-    <h1><%= bean.classification %></h1>
-    <p><%="Date: #{bean.date}"%></p>
-    <p><%="Damage severity: #{bean.severity}"%></p>
-  <% end %>
+  <div class="soy-grid">
+    <% @soy_beans.each do |bean| %>
+      <div class="soy-card">
+        <h1><%= bean.classification %></h1>
+        <p><%="Date: #{bean.date}"%></p>
+        <p><%="Damage severity: #{bean.severity}"%></p>
+      </div>
+    <% end %>
+  </div>
 </div>
