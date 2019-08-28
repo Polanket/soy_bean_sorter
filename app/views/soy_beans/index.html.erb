@@ -1,3 +1,14 @@
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Disease
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <% SoyBean.distinct.pluck(:classification).each do |disease| %>
+      <a class="dropdown-item" href="<%= disease %>"><%= disease.gsub("-", " ").capitalize %></a>
+    <% end %>
+  </div>
+</div>
+
 <% @soy_beans.each do |bean| %>
   <div class="container">
     <h1><%= bean.classification %></h1>
