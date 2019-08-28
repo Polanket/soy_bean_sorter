@@ -10,13 +10,13 @@
         </button>
       </div>
       <div class="modal-body">
-        <%= simple_form_for :search, url: root_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-          <%= f.input :classification, label: 'Disease', collection: SoyBean.distinct.pluck(:classification) %>
-          <%= f.input :date, label: 'Month', collection: SoyBean.distinct.pluck(:date) %>
-          <%= f.input :precip, label: 'Precipitation', collection: SoyBean.distinct.pluck(:precip) %>
-          <%= f.input :temp, label: 'Temperature', collection: SoyBean.distinct.pluck(:temp) %>
-          <%= f.input :area_damaged, label: 'Damage', collection: SoyBean.distinct.pluck(:area_damaged) %>
-          <%= f.input :severity, label: 'Severity', collection: SoyBean.distinct.pluck(:severity) %>
+        <%= simple_form_for :search, url: root_path, method: "GET" do |f| %>
+          <%= f.input :classification, label: 'Disease', collection: SoyBean.distinct.pluck(:classification), required: false %>
+          <%= f.input :date, label: 'Month', collection: SoyBean.distinct.pluck(:date), required: false %>
+          <%= f.input :precip, label: 'Precipitation', collection: SoyBean.distinct.pluck(:precip), required: false %>
+          <%= f.input :temp, label: 'Temperature', collection: SoyBean.distinct.pluck(:temp), required: false %>
+          <%= f.input :area_damaged, label: 'Damage', collection: SoyBean.distinct.pluck(:area_damaged), required: false %>
+          <%= f.input :severity, label: 'Severity', collection: SoyBean.distinct.pluck(:severity), required: false %>
       </div>
       <div class="modal-footer">
           <%= f.submit "Search", class: "btn btn-primary" %>

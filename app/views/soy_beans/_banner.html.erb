@@ -1,6 +1,9 @@
 <nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand">Soybituary</a>
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    Filters
-  </button>
+  <%= link_to "Soybituary", root_path, class:"navbar-brand" %>
+  <div class="form-inline">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      Filters
+    </button>
+    <%= link_to 'Clear', root_path, class: "btn btn-secondary ml-2" %>
+  </div>
 </nav>
