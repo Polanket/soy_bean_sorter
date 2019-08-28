@@ -1,13 +1,13 @@
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Disease
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <% SoyBean.distinct.pluck(:classification).each do |disease| %>
-      <a class="dropdown-item" href="<%= disease %>"><%= disease.gsub("-", " ").capitalize %></a>
-    <% end %>
-  </div>
-</div>
+
+<%= simple_form_for :search, url: root_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+  <%= f.input :classification, collection: SoyBean.distinct.pluck(:classification) %>
+  <%= f.input :date, collection: SoyBean.distinct.pluck(:date) %>
+  <%= f.input :precipitation, collection: SoyBean.distinct.pluck(:precip) %>
+  <%= f.input :temperature, collection: SoyBean.distinct.pluck(:temp) %>
+  <%= f.input :area_damaged, collection: SoyBean.distinct.pluck(:area_damaged) %>
+  <%= f.input :severity, collection: SoyBean.distinct.pluck(:severity) %>
+  <%= f.submit "Search", class: "btn btn-primary" %>
+<% end %>
 
 <% @soy_beans.each do |bean| %>
   <div class="container">
