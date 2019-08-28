@@ -2,8 +2,8 @@
 <%= simple_form_for :search, url: root_path, method: "GET", html: { class: 'form-inline' } do |f| %>
   <%= f.input :classification, collection: SoyBean.distinct.pluck(:classification) %>
   <%= f.input :date, collection: SoyBean.distinct.pluck(:date) %>
-  <%= f.input :precipitation, collection: SoyBean.distinct.pluck(:precip) %>
-  <%= f.input :temperature, collection: SoyBean.distinct.pluck(:temp) %>
+  <%= f.input :precip, collection: SoyBean.distinct.pluck(:precip) %>
+  <%= f.input :temp, collection: SoyBean.distinct.pluck(:temp) %>
   <%= f.input :area_damaged, collection: SoyBean.distinct.pluck(:area_damaged) %>
   <%= f.input :severity, collection: SoyBean.distinct.pluck(:severity) %>
   <%= f.submit "Search", class: "btn btn-primary" %>

@@ -10,7 +10,10 @@ class SoyBeansController < ApplicationController
   private
 
   def search_params
-    params.require(:search).permit(:classification, :date, :precip, :temp, :area_damaged, :severity).to_h.reject {|_, value| value.empty?} if params.has_key? :search
+    params
+      .require(:search).permit(:classification, :date, :precip, :temp, :area_damaged, :severity)
+      .to_h
+      .reject { |_, value| value.empty? } if params.key? :search
   end
 end
 
