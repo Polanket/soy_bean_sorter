@@ -27,7 +27,8 @@
   </div>
 </div>
 
-<div class="container mt-3">
+<div class="container mt-3 mb-3">
+  <h5><%= @soy_beans_count > 0 ? "Results found: #{@soy_beans_count}" : "No instances found, please try another filter" %></h5>
   <div class="soy-grid">
     <% @soy_beans.each do |bean| %>
       <div class="card">
