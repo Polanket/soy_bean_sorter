@@ -27,13 +27,18 @@
   </div>
 </div>
 
-<div class="container">
+<div class="container mt-3">
   <div class="soy-grid">
     <% @soy_beans.each do |bean| %>
-      <div class="soy-card">
-        <h1><%= bean.classification %></h1>
-        <p><%="Date: #{bean.date}"%></p>
-        <p><%="Damage severity: #{bean.severity}"%></p>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><%= bean.classification.gsub("-", " ").capitalize %></h5>
+          <h6 class="card-subtitle mb-2"><%="Date: #{bean.date.capitalize}"%></h6>
+          <p class="card-text mb-0">Area damaged: <strong><%= bean.area_damaged.capitalize %></strong></p>
+          <p class="card-text mb-0">Damage severity: <strong><%= bean.severity.capitalize %></strong></p>
+          <p class="card-text mb-0">Precipitation: <strong><%= bean.precip.capitalize %></strong></p>
+          <p class="card-text">Temperature: <strong><%= bean.temp.capitalize %></strong></p>
+        </div>
       </div>
     <% end %>
   </div>
