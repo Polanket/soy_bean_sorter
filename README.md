@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+App built with Rails 6.
 
-Things you may want to cover:
+After cloning:
 
-* Ruby version
+* Bundle install
 
-* System dependencies
+* Yarn install
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Rails db:create db:migrate db:seed
